@@ -29,8 +29,13 @@ const loadTimeBlocks = function () {
     timeBlock.appendChild(time);
     const inputField = document.createElement("textarea");
     inputField.id = i;
+    inputField.value = localStorage.getItem(i);
+    inputField.setAttribute("spellcheck", "false");
     timeBlock.appendChild(inputField);
     const saveBtn = document.createElement("button");
+    saveBtn.addEventListener("click", function () {
+      saveTasks(inputField);
+    });
     saveBtn.className = "saveBtn";
     const saveIcon = document.createElement("span");
     saveIcon.textContent = "save";
@@ -44,16 +49,21 @@ const loadTimeBlocks = function () {
       inputField.className = "present";
       num = i;
     }
-  }
-
-  for (let i = 0; i < timeLabels.length; i++) {
-    const inputField = document.getElementById(i);
     if (i < num) {
       inputField.className = "past";
     } else if (i > num) {
       inputField.className = "future";
     }
   }
+
+  function saveTasks(element) {
+    localStorage.setItem(element.id, element.value);
+    console.log(element.value);
+  }
 };
 
 loadTimeBlocks();
+
+// on button click
+
+// check text area value
