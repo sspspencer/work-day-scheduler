@@ -23,3 +23,4 @@ https://sspspencer.github.io/work-day-scheduler/
 Spencer Pichette 
 
 
+![CaptureWorkDay](https://user-images.githubusercontent.com/92232513/176916310-ed3e6f43-4d7e-47de-a553-bc5b05bc068d.PNG)
